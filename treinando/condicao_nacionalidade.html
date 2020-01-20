@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício de Condição</title>
+    <style>
+        body{
+            background-color: #9400D3;
+            color: #4F4F4F;
+            font-family: Arial, Helvetica, sans-serif;
+           
+        }
+        div{
+            background-color:#D3D3D3;
+            border-radius: 1em;
+            opacity: 80%;
+            text-align: center;
+            margin-bottom: 2%;
+            height: 80px;
+            line-height: 30px;
+        }
+        h1{
+            line-height: 80px;
+        }
+    </style>
+</head>
+    <body>
+        
+        <div class="col-lg-12 col-md-12">
+            <h1>Nacionalidade</h1>
+        </div>    
+        <div class="col-lg-12 col-md-12">
+            <p>Informe o país onde nasceu: </p>
+            <input type="text" name="pais" id="pais">
+            <input type="button" value="Verificar" onclick="verificacao()">
+            
+        </div>
+        <div id="res"></div>
+        
+        
+        <script>
+            function verificacao(){
+                var pais = window.document.querySelector('input#pais')
+                var res = window.document.querySelector('div#res')
+                var pais = String(pais.value)//transforma o valor verificado em numero
+                res.innerHTML = `<p>O país informado foi: ${pais}. </p>`
+                if (pais == 'Brasil'){
+                    res.innerHTML += '<p>Você está em seu país de origem!</p>'
+                } else {
+                    res.innerHTML += '<p>Você <strong>NÃO</strong> está em seu país de origem</p>'
+                }
+            }   
+        
+        </script>
+
+    </body>
+</html>     
